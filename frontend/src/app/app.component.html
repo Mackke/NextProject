@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" (click)="home()">Administrator Site</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a (click)="users()">Users</a></li>
+      <li><a (click)="stats()">Stats</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manage
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a (click)="first()">*</a></li>
+          <li><a (click)="second()">**</a></li>
+          <li><a (click)="third()">***</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a (click)="logbtn()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row" *ngIf="homeLinkwasClicked">
+    <div class="col-xs-12">
+      <h3>Welcome</h3>
+      <app-home></app-home>
+    </div>
+  </div>
+    <div class="row" *ngIf="statsLinkwasClicked">
+      <div class="col-xs-12">
+        <h3>Stats</h3>
+        <app-stats></app-stats>
+      </div>
+    </div>
+      <div class="row" *ngIf="userLinkwasClicked">
+        <div class="col-md-8">
+          <h3>USER</h3>
+          <app-users></app-users>
+        </div>
+
+        <div class="col-md-4">
+          <button>Click me</button>
+        </div>
+      </div>
+
+
+    </div>
+</body>
+</html>
+
